@@ -22,7 +22,7 @@ def _effective_clear_date(due_date: date, amount: float, latency_days: int) -> d
     return due_date + timedelta(days=max(0, latency_days))
 
 
-def _ensure_future_obligations(cur, simulated_now: date, horizon_days: int = 45) -> int:
+def _ensure_future_obligations(cur, simulated_now: date, horizon_days: int = 60) -> int:
     """
     Keep a rolling pipeline of future receivables and payables so the dashboard
     continues to simulate a real business after the slider moves forward.
